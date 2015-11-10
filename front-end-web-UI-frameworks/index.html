@@ -47,21 +47,35 @@
                      </li>
                     <li><a href="contactus.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
                 </ul>
-                <ul class="nav pull-right">
-                  <li>
-                    <form class="navbar-form">
-                      <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email" />
-                        <input type="password" class="form-control" placeholder="Password" />
-                        <input type="checkbox"> Remember me
-                      </div>
-                      <button type="submit" class="btn btn-primary">Sign In</button>
-                    </form>
-                  </li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a data-toggle="modal" data-target="#loginModal">
+                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
                 </ul>
               </div>
           </div>
     </nav>
+     <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Login </h4>
+            </div>
+            <div class="modal-body">
+              <form class="navbar-form">
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Email" />
+                  <input type="password" class="form-control" placeholder="Password" />
+                  <input type="checkbox"> Remember me
+                </div>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+              </form>
+            </div>
+        </div>
+        </div>
+    </div>
     <header class="jumbotron">
         <div class="container">
             <div class="row">
@@ -76,7 +90,9 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:40px;"></p>
-                    <a href="#reserveform" class="btn btn-warning">Reserve Table</a>
+                    <a type="button" class="btn btn-warning btn-block"
+                    data-toggle="tooltip" title="Or Call us at +852 12345678"
+                     data-placement="bottom" href="#reserveform">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -262,6 +278,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
+    <script>
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+         });
     </script>
 </body>
 
