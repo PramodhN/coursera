@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('confusionApp')
-        .factory('menuFactory', function() {
+        .service('menuFactory', function() {
           var dishes=[
                          {
                           name:'Uthapizza',
@@ -161,14 +161,10 @@ angular.module('confusionApp')
                                }                                                          ]
                         }
                         ];
-            var menufac = {};
-            menufac.getDishes = function(){
-              return dishes;
+            this.getDishes = function(){
+                return dishes;
             };
-
-            menufac.getDish = function (index) {
-              return dishes[index];
+            this.getDish = function (index) {
+                return dishes[index];
             };
-
-            return menufac;
         });
